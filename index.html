@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- заголовк сторінки -->
+    <title>HllWrld Android App</title>
+</head>
+<body>
+   <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!-- Ваш логотип -->
+                    <img src="logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <!-- Текст на панелі зліва -->
+                    <span class="name">HllWrld</span>
+                    <span class="profession">by hocbmyke</span>
+                </div>
+            </div>
+
+            <i class="bx bx-chevron-right toggle" ></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                    <li class='search-box'>
+                        <i class='bx bx-search icon' ></i>
+                            <input type="text" placeholder="Пошук...">
+                    </li>
+                <ul class="menu-links">
+                    <li  class='nav-link'>
+                        <a id="mainbutton">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Головна</span>
+                        </a>
+                    </li>
+                    <li  class='nav-link'>
+                        <a id="downbutton">
+                            <i class='bx bxs-download icon'></i>
+                            <span class="text nav-text">Завантажити</span>
+                        </a>
+                    </li>
+                    <li  class='nav-link'>
+                        <a id="contactbutton">
+                            <i class='bx bx-envelope icon' ></i>
+                            <span class="text nav-text">Для зв'язку</span>
+                        </a>
+                    </li>
+                    <li  class='nav-link'>
+                        <a id="aboutusbutton">
+                            <i class='bx bx-info-circle icon' ></i>
+                            <span class="text nav-text">Про нас</span>
+                        </a>
+                    </li>   
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-donate-heart icon' ></i>
+                        <span class="text nav-text">Підтримка проекту</span>
+                    </a>
+                </li>
+                
+                    <li class='mode'>
+                        <div class="moon-sun">
+                            <i class='bx bx-moon icon moon' ></i>
+                            <i class='bx bx-sun icon sun' ></i>
+                        </div>
+                    <span class="mode-text text">Нічна Тема</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li> 
+            </div> 
+        </div>
+    </nav>
+
+    <section id="main" class="home">
+        <div id="homeSection" class="text"></div>
+                <div class="app-description">
+                    <!-- Заголовок на гол сторінці, назва додатку -->
+                    <h1>HllWrld</h1>
+                    <p class="text3">
+                        <!-- Опис -->
+                        Програма, що допоможе вам розвиватися та самовдосконялюватися,
+                        а також бути завжди сучасним, тому що наш додаток використовує
+                        новітній дизайн та має велику кількість переваг в порівнянні
+                        з конкурентами. Ми на ринку зовсім недавно, але вже маємо успіхи
+                        в своїй галузі. Надіємось, що наш додаток зможе вам допомогти з вивченням програмування!(приклад тексту)
+                    </p>
+                </div>
+                <div class="videoimage">
+                    <img src="andstud.png" alt="andstud">
+                </div>
+        <div id="downloadSection" class="text">Останні релізи</div>
+            <p class="text3">
+                Завантажуй останню стабільну версію та отримуй новий експіріанс не боячись зловити вірусів! 
+            </p>
+            <div class="downloadbuttons">
+                <div class="downloaddesc">
+                    <div class="text2">Остання версія: </div>
+                    <div class="button">
+                        <div class="content">
+                            
+                            <i class="bx bx-cloud-download"></i>
+                            <span class="button-text" id="downloadButton">Завантажити</span>
+                            <!-- Враховуючи що це сайт для андроїд додатку, додайте його в папку з index файлом та вкажіть його назву тут -->
+                            <a id="downloadLink" href="вкажіть файл що буде завантажуватись" download="HllWrld" style="display: none;"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="downloaddesc">
+                    <div class="text2">Попередні релізи:</div>
+                    <div class="archive-button" id="archiveButton">
+                        <div class="content">
+                            <i class="bx bx-archive"></i>
+                            <span class="button-text" id="archiveButton">Архів</span>
+                            <!-- Добавлення посилання в кнопку -->
+                            <a id="archiveLink" href="google.drive"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="contactSection" class="text">Для зв'язку</div>
+            <!-- Добавте посилання на свої соц мережі -->
+        <div id="aboutusSection" class="text">Про нас</div>
+            <!-- Змініть текст під свої потреби -->
+            <div class="app-description">    
+                <p class="text3">
+                    Ми компанія що працює на ринку ще з хххх року та базується у хххххххх.
+                </p>
+                <p class="text3">
+                    Наша команда займається розробкою різних проктів починаючи Android застосунками і закінчуючи Web-розробкою.
+                </p>
+                <p class="text3">
+                    Щоб замовити якийсь проект чи зв'язатися з нами по приводу співпраці можна використовувати посилання що вказані 
+                    у вікні "Для зв'язку".
+                </p>
+            </div>
+    </section>
+    
+   <script src="script.js"></script>
+
+</body>
+</html>

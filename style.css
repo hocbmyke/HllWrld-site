@@ -1,0 +1,488 @@
+/*=====  Шрифт   =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+:root{
+    /* ===== Кольори =====*/
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #695cfe;
+    --button-color: #695cfe;
+    --button-color-dark: #fff;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+
+    /* ===== Переходи =====*/
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+ body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+ }
+
+/*  ===== Панелька =====  */
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close{
+    width: 88px;
+}
+/*  ===== Resuable =====  */
+
+.sidebar .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);  
+    white-space: nowrap;  
+    opacity: 1;
+}
+
+.sidebar.close .text{
+    opacity: 0;
+}
+
+.sidebar .image{
+        min-width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.sidebar li{
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+.sidebar li .icon,
+.sidebar li .text{
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+
+
+.sidebar header{
+    position: relative;
+}
+
+
+
+.sidebar .image-text img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+
+.header .image-text .header-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name{
+    display: flex;
+    font-weight: 600;
+}
+
+.header-text .profession {
+    display: flex;
+    margin-top: -2px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;  
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transition: var(--tran-03);
+}
+
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+    transform:translateY(-50%) rotate(180deg); /* Keep this line */
+    color: var(--text-color);
+}
+
+body.dark .sidebar.close header .toggle{
+    transform: translateY(-50%);
+}
+
+.sidebar .menu{
+    margin-top: 35px;
+}
+.sidebar .search-box{
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+    color: var(--text-color);
+    
+}
+.sidebar li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+.sidebar li a:hover{
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode{
+    position: relative;
+    border-radius: 6px;
+    background: var(--primary-color-light);   
+    transition: var(--tran-05);
+
+}
+
+.menu-bar .mode .moon-sun{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i{
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun{
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun{
+    opacity: 1;
+}
+body.dark .menu-bar .mode i.moon{
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+    border: 6px;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before{
+    left: 24px;
+}
+
+.home{
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: left;
+}
+
+.home .text{
+    
+    font-size:  30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+    margin-bottom: 10px;
+}
+
+
+.sidebar.close ~ .home{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+/* ===== Контейнер для кгопок =====*/
+.downloaddesc{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px 40px 0px 40px;
+    
+}
+.downloadbuttons{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center; 
+
+}
+/* ===== Кнопка Download =====*/
+
+.button{
+    position: relative;
+    /* top: 0%;
+    left: 25%;
+    transform: translate(-50%, -50%); */
+    height: 95px;
+    width: 360px;
+    background: #7D2AE8;
+    border-radius: 55px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .button.active{
+    height: 20px;
+    width: 500px;
+  }
+  .button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: #5b13b9;
+    border-radius: 55px;
+    transition: all 6s ease-in-out;
+  }
+  .button.active::before{
+    animation: layer 6s ease-in-out forwards;
+  }
+  @keyframes layer {
+    100%{
+      left: 0%;
+    }
+  }
+  .button .content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    transition-delay: 0.2s;
+  }
+  .button.active .content{
+    transform: translateY(60px);
+  }
+  .button .content i,
+  .button .content .button-text{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .button .content .button-text{
+    font-size: 28px;
+    margin-left: 8px;
+  }
+  /* ===== Кнопка Archive =====*/
+  .archive-button {
+    position: relative;
+    /* top: 10%;
+    left: 35%;
+    transform: translate(-50%, -50%); */
+    height: 95px;
+    width: 360px;
+    background: #7D2AE8;
+    border-radius: 55px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+    z-index: 1;
+  }
+  .archive-button .content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    transition-delay: 0.2s;
+  }
+
+  .archive-button .content i,
+  .archive-button .content .button-text{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .archive-button .content .button-text{
+    font-size: 28px;
+    margin-left: 8px;
+  }
+
+
+/* Стилі для тексту "app-description" */
+.app-description {
+    text-align: center;
+    margin-top: 0%;
+    padding: 0px 40px 0px 40px;
+}
+
+.app-description h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--button-color);
+    margin-bottom: 10px; /* Додано відступ від нижнього краю заголовка */
+}
+
+
+
+/* Доп текст */
+.home .text2 {
+    
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0px 40px;
+    margin-bottom: 10px;
+}
+.home .text3{
+    
+    font-size:  20px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0px 40px;
+    margin-bottom: 10px;
+}
+
+/* Відео та картинки */
+.videoimage{
+    padding: 0px 40px;
+    width: 100%;
+    margin: 0 auto; 
+    border-radius: 15px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.videoimage img{
+    width: 100%; 
+    height: auto; 
+    border-radius: 15px; 
+}
